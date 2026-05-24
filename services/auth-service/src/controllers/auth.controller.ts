@@ -3,7 +3,7 @@ import { IUser } from "../models/user.model";
 import { AppError } from "../utils/AppError";
 import { signUpService } from "../services/auth.service";
 import { ApiResponse } from "../types/apiResponse.type";
-const signUpController = async (req: Request, res: Response) => {
+export const signUpController = async (req: Request, res: Response) => {
   try {
     const { fullName, email, password, role } = req.body;
     if (!fullName || !email || !password || !role) {

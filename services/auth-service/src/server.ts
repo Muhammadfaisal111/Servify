@@ -5,7 +5,7 @@ import { connect } from "node:http2";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 connectDB();
 
