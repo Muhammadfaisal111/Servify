@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 import { IUser } from "../models/user.model";
 import { AppError } from "../utils/AppError";
-import { signUpService } from "../services/auth.service";
+import { sendEmailService } from "../services/auth.service";
 import { ApiResponse } from "../types/apiResponse.type";
-export const signUpController = async (req: Request, res: Response) => {
+export const sendEmailController = async (req: Request, res: Response) => {
   try {
     const { fullName, email, password, role } = req.body;
     if (!fullName || !email || !password || !role) {
@@ -14,7 +14,7 @@ export const signUpController = async (req: Request, res: Response) => {
     }
 
     // call service
-    const newOtp = await signUpService({ fullName, email, password, role });
+    const newOtp = await sendEmailService({ fullName, email, password, role });
     res.status(201).json({
       success: true,
       message: "OTP sent to email",

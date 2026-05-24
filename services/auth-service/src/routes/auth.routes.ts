@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-import { signUpController } from "../controllers/auth.controller";
+import { sendEmailController } from "../controllers/auth.controller";
 
-router.post("/signup", signUpController);
+router.post("/signup", sendEmailController);
 
 export default router;

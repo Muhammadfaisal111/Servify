@@ -9,7 +9,7 @@ interface IUser {
   role: "User" | "Admin" | "Worker";
 }
 
- export const signUpService = async (userData: IUser) => {
+export const sendEmailService = async (userData: IUser) => {
   const { fullName, email, password, role } = userData;
   const IsUserExist = await User.findOne({ email });
   if (IsUserExist) {
